@@ -1,0 +1,136 @@
+/*
+Style sheet principal d'affichage des articles dans l'accueil.
+
+*/
+body{
+  width: 100%;
+  margin: 0;
+  background: url('../images/house-forest-snow-mountain-dream-switzerland-1920x1080-wallpaper-wp20010226.jpg') fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header{
+  width: 70%;
+  margin: auto;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+header h1, header p{
+  text-align: center;
+}
+header h1{
+  padding-top: 2%;
+  font-size: 2.5em;
+}
+header p{
+  padding-bottom: 2%;
+  font-size: 1.5em;
+}
+#main_contenaire{
+  width: 80%;
+  margin: auto;
+}
+#contenu_articles{
+  padding: 5%;
+  padding-top: 2%;
+}
+/****
+************* definition de l'aparance contenair article.
+**/
+.articles{
+  position: relative;
+  margin: 1%;
+  margin-bottom: 20px;
+  height: 40%;
+  overflow: hidden;
+  background: rgba(255,255,255,0.7);
+  font-family: 'Contrail One', cursive,'Open Sans', sans-serif;
+  text-align: justify;
+}
+.articles:hover{
+  background: rgb(239,235,233);
+}
+.illustration{
+  display: none;
+  width: 90%;
+  height: 50%;
+  margin: auto;
+  background-color: red;
+  border: solid;
+
+}
+.titreArticle{
+  margin: 0;
+  font-size: 2em;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-top: solid 0.5px grey;
+  border-bottom: solid 0.5px grey;
+}
+.articles p{padding: 1%;}
+/****
+************* definition de l'aparance contenair manager.
+**/
+.articles:hover .manager {
+  opacity: 1;
+}
+.manager{
+  opacity: 0;
+  /*dimension*/
+  width: 100%;
+  height: 30%;
+  /*aspect*/
+  background: rgba(255,138,101,0.9);
+  color: #fff;
+  /*positionnement*/
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  z-index: 10
+  /*animation*/
+  -webkit-transition: opacity 0.8s linear;
+  -moz-transition: opacity 0.8s linear;
+  -o-transition: opacity 0.8s linear;
+  -ms-transition: opacity 0.8s linear;
+  transition: opacity 0.8s linear;
+}
+.manager ul{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 5%;
+  padding: 0;
+}
+.manager li{
+  margin-right: 2%;
+}
+.pagin{
+    width: 98%;
+    margin: auto;
+}
+.pages, #page{
+    display: inline-block;
+    background: rgba(255,255,255,0.8);
+    width: 47px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2em;
+}
+#page{
+
+    font-size: 2.5em;
+    box-shadow: 10px 10px 60px black;
+    border-radius: 2px;
+
+}
+#adminbtn{
+    display: inline-block;
+    font-size: 1.5em;
+    font-family: system-ui;
+    color: rgb(44, 62, 80);
+    margin-top: -16px;
+    background: rgba(236, 240, 241, 0.4);
+    margin-left: 47px;
+    border-radius: 3px;
+    border: 0;
+}

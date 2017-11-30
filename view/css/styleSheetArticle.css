@@ -1,0 +1,167 @@
+/***
+*********************
+******************* Section dispoition Générale.
+*/
+body{
+  font-family: 'Contrail One', cursive,'Open Sans', sans-serif;
+  background: url('../images/587670918-winter-log-cabin-wallpaper.jpg') fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#main_contenaire{
+  width: 100%;
+}
+#titreBlog{
+  position: absolute;
+  top: 5%;
+  left: 33%;
+  /*color:white;*/
+  font-size: 3em;
+  text-shadow: 10px 10px 70px snow;
+}
+#cadreTitre{
+  background: rgba(235, 237, 239,0.7);
+  width: 70%;
+  height: 200px;
+  margin: auto;
+}
+
+/***
+*********************
+******************* Section contenu articles.
+*/
+
+#articleContent,#commentaires ,img{
+  width: 70%;
+  margin: auto;
+}
+#articleContent{
+  background: #fbfcfc;
+}
+#articleContent h1{
+  font-size: 2em;
+  margin: 0;
+  padding-top: 3%;
+}
+#articleContent p{
+  padding: 2%;
+  /*border: solid 0.5px;*/
+  text-align: justify;
+  margin: 0;
+}
+
+/***
+*********************
+******************* Section commentaires.
+*/
+
+#commentaires{
+  /*border: solid;*/
+  background: rgba(235, 237, 239,0.9);
+}
+#commentaires form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15%;
+  padding-bottom: 6%;
+}
+#commentaires form input, #commentaires form textarea{
+  width: 60%;
+  border-radius: 3px;
+  margin: auto;
+  margin-top: 10px;
+  border: 0;
+  font-size: 1em;
+  text-align: center;
+}
+#commentaires form input{
+  height: 30px;
+}
+#commentaires form textarea{
+  height: 100px;
+}
+#submit{
+  background-color: #5DADE2;
+  margin-bottom: 10px;
+}
+#commentaires h2, #infoCom{
+  text-align: center;
+}
+#commentaires h2{
+  font-size: 2.5em;
+  margin: 0;
+  padding-top: 7%;
+  padding-bottom: 5%;
+}
+#infoCom{
+  margin-bottom: 5%;
+  padding-bottom:5%;
+}
+#commentaires p{
+  padding-left: 2%;
+  font-size: 1.2em;
+}
+.pseudo{
+  font-weight: bold;
+}
+#commentaires div:hover button{
+  opacity: 1;
+}
+#commentaires div{
+  position: relative;
+  border-bottom: 0.2px solid #F5F5F5;
+}
+#commentaires button{
+  opacity: 0;
+  margin: 25px;
+  border: 0;
+  width: 16%;
+  height: 40px;
+  font-size: 1em;
+  color: white;
+  border-radius: 3px;
+  background: rgba(2255, 0, 0,1);
+
+  /*animation*/
+  -webkit-transition: opacity 0.8s linear;
+  -moz-transition: opacity 0.8s linear;
+  -o-transition: opacity 0.8s linear;
+  -ms-transition: opacity 0.8s linear;
+  transition: opacity 0.8s linear;
+}
+#accueil{
+  /*Positionnement*/
+  position: fixed;
+  top: 10%;
+  left: 2%;
+  z-index: 20;
+  }
+#accueil button{
+  /*Apparence*/
+  height: 50px;
+  font-size: 1em;
+  font-weight: 300;
+  background-color: rgba(255,255,255,0.8);
+  border: 0;
+  border-radius: 3px;
+}
+asicommentaires .pagin{
+    width: 98%;
+    margin: auto;
+    border: none;
+}
+.pages, #page{
+    display: inline-block;
+    background: rgba(255,255,255,0.8);
+    width: 47px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2em;
+}
+#page{
+    
+    font-size: 2.5em;
+    box-shadow: 10px 10px 60px black;
+    border-radius: 2px;
+    
+}
