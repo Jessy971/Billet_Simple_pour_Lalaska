@@ -5,7 +5,7 @@ Style sheet principal d'affichage des articles dans l'accueil.
 body{
   width: 100%;
   margin: 0;
-  background: url('../images/house-forest-snow-mountain-dream-switzerland-1920x1080-wallpaper-wp20010226.jpg') fixed;
+  background: url('view/assets/images/house-forest-snow-mountain-dream-switzerland-1920x1080-wallpaper-wp20010226.jpg') fixed;
   background-repeat: no-repeat;
   background-size: cover;
 }
