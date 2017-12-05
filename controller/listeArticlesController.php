@@ -16,6 +16,9 @@ if(isset($_POST['pseudo'],$_POST['password']))
 
   if($login == 'admin' && $password == 'admin')
   {
+    session_start();
+    $_SESSION['password'] = $password;
+    $_SESSION['login']    = $login;
     $titre = 'Administrateur';
     $btnManager ='view/__btnManager.php';
     include_once('view/viewAccueilAdmin.php');
