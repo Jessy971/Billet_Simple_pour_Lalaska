@@ -30,7 +30,7 @@
       </aside>
       <a id="accueil" href="<?php $accueil; ?>"><button>Retour à l'accueil</button></a>
     </section>
-    <script type="text/javascript" src="../../lib/jquery-3.2.1.js"></script>
-    <script type="text/javascript" src="../../controller/js/set_btn.js"></script>
+    <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/set_btn.js"></script>
   </body>
 </html>
