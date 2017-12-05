@@ -4,7 +4,7 @@
  */
 class ManagerArticle{
     private $connexionBdd;
-    
+
     function __construct($bd){
       $this->connexionBdd = $bd;
     }
@@ -17,18 +17,14 @@ class ManagerArticle{
 
     //Affiche tout les articles
     public function readAll($limit, $offst){
-        $read = $this->connexionBdd->query('SELECT * FROM article ORDER BY id DESC LIMIT '.$offst.','.$limit);  
+        $read = $this->connexionBdd->query('SELECT * FROM article ORDER BY id DESC LIMIT '.$offst.','.$limit);
         return $read;
-        /*return $offset;*/
       }
 
     //Selectionne un article en fonction de son id.
     public function selectOne($id){
       $select = $this->connexionBdd->prepare('SELECT * FROM article WHERE id=?');
       $select->execute(array($id));
-      while ($donnees = $select->fetch()) {
-           echo $donnees['contenu'];
-      }
       return $select;
     }
 
@@ -45,7 +41,7 @@ class ManagerArticle{
       $delete=$this->connexionBdd->prepare('DELETE FROM article WHERE id=?');
       $delete->execute(array($id));
     }
-    
+
     public function countArt(){
       $count = $this->connexionBdd -> query('SELECT id FROM commentaires');
       $nCom = $count->rowCount();
