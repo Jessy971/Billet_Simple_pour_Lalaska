@@ -5,9 +5,8 @@
       <article id="articleContent">
         <?php
         foreach ( $contenu as $article) {
-            echo $article['contenu'];
+          echo $article['contenu'];
         }
-
         ?>
       </article>
       <aside id="commentaires">
@@ -25,12 +24,37 @@
 
         /*$coms -> readAll($idArticle);*/
          /*echo strval($commentaires);*/
-         $coms -> readAllComments($idArticle, 50, 0);
+
+         foreach ($commentaires as $commentaire)
+         {
+           if($commentaire['signale'] != 1){
+        ?>
+             <div>
+                <p class="pseudo"> Posté par : <?php echo $commentaire['pseudo'];?></p>
+                <p class="commentaires"><?php echo $commentaire['commentaire'];?></p>
+                <p class="datetime">Le <?php  echo $commentaire['date_com'];?></p>
+                <a class="supr" href="article.php?idCom='.$commentaire['id'].'"><button>Supprimer</button></a>
+                <a class="lienBtn" href="articleVisiteur.php?idComsign=' .$commentaire['id']. '"><button class="btn">Signaler</button></a>
+             </div>
+        <?php
+           }
+           else {
+        ?>
+             <div>
+                <p class="pseudo"> Posté par : <?php echo $commentaire['pseudo'];?></p>
+                <p class="commentaires"><?php echo $commentaire['commentaire']?><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></p>
+                <p class="datetime">Le <?php echo $commentaire['date_com'];?></p>
+                 <a class="supr" href="article.php?idCom='.$commentaire['id'].'"><button>Supprimer</button></a>
+                 <a class="lienBtn" href="articleVisiteur.php?idComsign=' .$commentaire['id']. '"><button class="btn">Signaler</button></a>
+              </div>
+        <?php
+           }
+         }
         ?>
       </aside>
-      <a id="accueil" href="<?php $accueil; ?>"><button>Retour à l'accueil</button></a>
+      <a id="accueil" href="<?php echo $accueil;?>"><button>Retour à l'accueil</button></a>
     </section>
     <script type="text/javascript" src="../lib/jquery-3.2.1.js"></script>
-    <script type="text/javascript" src="js/set_btn.js"></script>
+    <script <?php echo $scriptJs;?>></script>
   </body>
 </html>
