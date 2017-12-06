@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_SESSION['password'], $_SESSION['login']))
 {
   require_once('../modele/bddConnexionClass.php');
@@ -20,4 +21,5 @@ if(isset($_SESSION['password'], $_SESSION['login']))
   }
   header("Location: ../index.php");
 }
-header("Location: ../index.php");
+/*header("Location: ../index.php");*/
+echo "pas de password ou pseudo";
