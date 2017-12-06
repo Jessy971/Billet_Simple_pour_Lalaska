@@ -1,5 +1,6 @@
 <?php
 session_start();
+setcookie('idArticle',$_GET['id'],time()+60,null,null,false,true);
 require_once('../modele/class/ManagerArticle.class.php');
 require_once('../modele/class/ManagerCommentaires.class.php');
 require_once('../modele/bddConnexionClass.php');
