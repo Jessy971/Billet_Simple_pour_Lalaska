@@ -33,8 +33,8 @@
                 <p class="pseudo"> Posté par : <?php echo $commentaire['pseudo'];?></p>
                 <p class="commentaires"><?php echo $commentaire['commentaire'];?></p>
                 <p class="datetime">Le <?php  echo $commentaire['date_com'];?></p>
-                <a class="supr" href="article.php?idCom='.$commentaire['id'].'"><button>Supprimer</button></a>
-                <a class="lienBtn" href="articleVisiteur.php?idComsign=' .$commentaire['id']. '"><button class="btn">Signaler</button></a>
+                <a class="supr" href="deleteController.php?idCom=<?php echo $commentaire['id'];?>"><button>Supprimer</button></a>
+                <a class="lienBtn" href="signaleCommentaireController.php?idComsign=<?php echo $commentaire['id'];?>"><button class="btn">Signaler</button></a>
              </div>
         <?php
            }
@@ -42,10 +42,10 @@
         ?>
              <div>
                 <p class="pseudo"> Posté par : <?php echo $commentaire['pseudo'];?></p>
-                <p class="commentaires"><?php echo $commentaire['commentaire']?><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></p>
+                <p class="commentaires"><?php echo $commentaire['commentaire']?></p>
                 <p class="datetime">Le <?php echo $commentaire['date_com'];?></p>
-                 <a class="supr" href="article.php?idCom='.$commentaire['id'].'"><button>Supprimer</button></a>
-                 <a class="lienBtn" href="articleVisiteur.php?idComsign=' .$commentaire['id']. '"><button class="btn">Signaler</button></a>
+                 <a class="supr" href="deleteController.php?idCom=<?php echo $commentaire['id'];?>"><button>Supprimer</button></a>
+                 <p>Commentaire signalé ! <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></p>
               </div>
         <?php
            }
