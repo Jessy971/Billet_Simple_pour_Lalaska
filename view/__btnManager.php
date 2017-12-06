@@ -8,13 +8,13 @@
     </li>
     <!--bouton lecture-->
     <li>
-      <a href="../../../view/admin/newArticle.php?id=<?php echo $donnees['id'];?>">
+      <a href="controller/EditerArticleController.php?id=<?php echo $donnees['id'];?>">
         <button>Modifier</button>
       </a>
     </li>
     <!--bouton Modifier-->
     <li>
-      <a href="../../../controller/admin/php/delete.php?id=<?php echo $donnees['id'];?>">
+      <a href="controller/deleteController.php?id=<?php echo $donnees['id'];?>">
         <button>Supprimer</button>
       </a>
     </li>
