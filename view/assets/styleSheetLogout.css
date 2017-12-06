@@ -1,7 +1,7 @@
 body{
     width: 100%;
     height: 100%;
-    background: url('../images/alaska-winter-wallpaper-wallpaper-4.jpg')fixed;
+    background: url('images/alaska-winter-wallpaper-wallpaper-4.jpg')fixed;
     background-size: cover
 }
 section{
