@@ -15,10 +15,10 @@ include_once('_head.php');
         </textarea>
         <input type="submit" value="enregister">
     </form>
-    <form method="POST" action="../index.php">
+    <form method="POST" action="../../accueilAdmin">
         <input type="submit" value="Accueil">
     </form>
-    <script type="text/javascript" src="admin/js/tinymce/tinymce.min.js"></script>
-    <script type="text/javascript" src="admin/js/textEditor.js"></script>
+    <script type="text/javascript" src="../../lib/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="../../controller/js/textEditor.js"></script>
   </body>
 </html>

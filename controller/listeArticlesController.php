@@ -1,5 +1,4 @@
 <?php
-session_start();
 require('modele/bddConnexionClass.php');
 require('modele/class/ManagerArticle.class.php');
 
@@ -9,21 +8,24 @@ $manager = new ManagerArticle($bdd->bdd());
 $articles = $manager->readAll(50,0);
 $css = 'rel="stylesheet" href="view/assets/styleSheetAccueil.css"';
 
-if(isset($_POST['pseudo'],$_POST['password']))
+if(isset($_POST['pseudo'],$_POST['password']) || isset($_SESSION['password'], $_SESSION['login']))
 {
-  $login = htmlspecialchars($_POST['pseudo']);
-  $password = htmlspecialchars($_POST['password']);
+  if(isset($_POST['pseudo'],$_POST['password']))
+  {
+    $_SESSION['password'] = $_POST['password'];
+    $_SESSION['login']    = $_POST['pseudo'];
+  }
+  
+  $login                = htmlspecialchars($_SESSION['login']);
+  $password             = htmlspecialchars($_SESSION['password']);
+
 
   if($login == 'admin' && $password == 'admin')
   {
-    $_SESSION['password'] = $password;
-    $_SESSION['login']    = $login;
-    $titre = 'Administrateur';
+
+    $titre      = 'Administrateur';
     $btnManager ='view/__btnManager.php';
     include_once('view/viewAccueilAdmin.php');
-    echo '<p style ="color: white;">'.$_SESSION['password'].'</p>';
-    echo '<p style ="color: white;">'.$_SESSION['login'].'</p>';
-
   }
   else
   {

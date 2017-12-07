@@ -2,13 +2,13 @@
   <!--btn's list -->
   <ul>
     <li>
-      <a href="controller/getArticleController.php?id=<?php echo $donnees['id'];?>">
+      <a href="article/<?php echo $donnees['id'];?>">
         <button>Lire la suite</button>
       </a>
     </li>
     <!--bouton lecture-->
     <li>
-      <a href="controller/EditerArticleController.php?id=<?php echo $donnees['id'];?>">
+      <a href="editer/article/<?php echo $donnees['id'];?>">
         <button>Modifier</button>
       </a>
     </li>

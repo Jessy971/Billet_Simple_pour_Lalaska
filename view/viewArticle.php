@@ -27,30 +27,24 @@
 
          foreach ($commentaires as $commentaire)
          {
-           if($commentaire['signale'] != 1){
         ?>
              <div>
                 <p class="pseudo"> Posté par : <?php echo $commentaire['pseudo'];?></p>
                 <p class="commentaires"><?php echo $commentaire['commentaire'];?></p>
                 <p class="datetime">Le <?php  echo $commentaire['date_com'];?></p>
                 <a class="supr" href="deleteController.php?idCom=<?php echo $commentaire['id'];?>"><button>Supprimer</button></a>
+                <?php if($commentaire['signale'] != 1){ ?>
                 <a class="lienBtn" href="signaleCommentaireController.php?idComsign=<?php echo $commentaire['id'];?>"><button class="btn">Signaler</button></a>
+                <?php
+                   }
+                   else {
+                ?>
+                <p>Commentaire signalé ! <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></p>
              </div>
-        <?php
-           }
-           else {
-        ?>
-             <div>
-                <p class="pseudo"> Posté par : <?php echo $commentaire['pseudo'];?></p>
-                <p class="commentaires"><?php echo $commentaire['commentaire']?></p>
-                <p class="datetime">Le <?php echo $commentaire['date_com'];?></p>
-                 <a class="supr" href="deleteController.php?idCom=<?php echo $commentaire['id'];?>"><button>Supprimer</button></a>
-                 <p>Commentaire signalé ! <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></p>
-              </div>
-        <?php
-           }
-         }
-        ?>
+             <?php
+                }
+              }
+             ?>
       </aside>
       <a id="accueil" href="<?php echo $accueil;?>"><button>Retour à l'accueil</button></a>
     </section>

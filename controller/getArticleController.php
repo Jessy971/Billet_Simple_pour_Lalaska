@@ -1,16 +1,14 @@
 <?php
-session_start();
-setcookie('idArticle',$_GET['id'],time()+60,null,null,false,true);
-require_once('../modele/class/ManagerArticle.class.php');
-require_once('../modele/class/ManagerCommentaires.class.php');
-require_once('../modele/bddConnexionClass.php');
+require_once('modele/class/ManagerArticle.class.php');
+require_once('modele/class/ManagerCommentaires.class.php');
+require_once('modele/bddConnexionClass.php');
 
-if(isset($_GET['id']))
+if(isset($url[1]))
 {
 
   $titre        = 'article';
-  $css          = 'rel="stylesheet" href="../view//assets/styleSheetArticle.css"';
-  $idArticle    = intVal($_GET['id']);
+  $css          = 'rel="stylesheet" href="../view/assets/styleSheetArticle.css"';
+  $idArticle    = intVal($url[1]);
   $bdd          = new DataConnection();
   $article      = new ManagerArticle($bdd->bdd());
   $contenu      = $article->selectOne($idArticle);
@@ -24,13 +22,13 @@ if(isset($_GET['id']))
   **/
   if(isset($_SESSION['password'], $_SESSION['login']))
   {
-    $accueil      = '../';
-    $scriptJs     ='type="text/javascript" src="js/set_btn_hide_sign.js"';
+    $accueil      = '../accueilAdmin';
+    $scriptJs     ='type="text/javascript" src="../controller/js/set_btn_hide_sign.js"';
   }
   else
   {
-    $accueil      = '../';
-    $scriptJs     ='type="text/javascript" src="js/set_btn.js"';
+    $accueil      = '';
+    $scriptJs     ='type="text/javascript" src="../controller/js/set_btn.js"';
   }
-  include_once('../view/viewArticle.php');
+  include_once('view/viewArticle.php');
 }
