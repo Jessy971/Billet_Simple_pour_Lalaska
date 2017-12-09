@@ -1,14 +1,15 @@
 <?php
 $css= "";
 $titre = "Editeur";
+$idArticle = $url[1];
 if(isset($_SESSION['password'], $_SESSION['login']))
 {
-  if(isset($_GET['id']) && $_GET['id'] != 0)
+  if(isset($idArticle) && $idArticle != 0)
   {
     require_once('modele/bddConnexionClass.php');
     require_once('modele/class/ManagerArticle.class.php');
 
-    $idArticle = intval($_url['2']);
+    $idArticle = intval($idArticle);
     $bdd = new DataConnection();
     $article = new ManagerArticle($bdd->bdd());
     $contenu = $article->selectOne($idArticle);
