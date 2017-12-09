@@ -8,7 +8,7 @@
     </li>
     <!--bouton lecture-->
     <li>
-      <a href="editer/article/<?php echo $donnees['id'];?>">
+      <a href="editer/<?php echo $donnees['id'];?>">
         <button>Modifier</button>
       </a>
     </li>
