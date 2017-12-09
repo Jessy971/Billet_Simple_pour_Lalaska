@@ -1,5 +1,4 @@
 <?php
-session_start();
 if(isset($_SESSION['password'], $_SESSION['login']))
 {
   require_once('../modele/bddConnexionClass.php');
@@ -16,8 +15,9 @@ if(isset($_SESSION['password'], $_SESSION['login']))
   }
   else
   {
-      $contenu = $_POST['newArticle'];
-      $article->create($contenu);
+      /*$contenu = $_POST['newArticle'];
+      $article->create($contenu);*/
+      echo $contenu;
   }
   header("Location: ../index.php");
 }
