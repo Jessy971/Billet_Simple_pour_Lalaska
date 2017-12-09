@@ -1,5 +1,5 @@
 
-    <form method="POST" action="adminpage">
+    <form method="POST" action="accueilAdmin">
         <h1>Page d'administration</h1>
       <input type="text" value="" name="pseudo" id="pseudo">
       <input type="password" name="password" id="password">
