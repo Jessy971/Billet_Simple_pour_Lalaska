@@ -1,7 +1,6 @@
 <?php
-session_start();
-$_SESSION =[];
-$css = 'rel="stylesheet" href="../view/assets/styleSheetLogout.css"';
+$titre = 'Déconnexion';
+$css = 'rel="stylesheet" href="view/assets/styleSheetLogout.css"';
 /*setcookie('authentifier',"",time()+1, null, null, false, true);*/
 session_destroy();
-include_once('../view/viewLogout.php');
+include_once('view/viewLogout.php');

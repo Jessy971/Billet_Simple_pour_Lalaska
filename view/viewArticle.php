@@ -11,20 +11,8 @@
       </article>
       <aside id="commentaires">
         <h2>Commentaires</h2>
-
-        <?php include_once('__formCommentaire.php'); ?>
-
         <?php
-
-        /*
-        * verifie l'existance d'un speudo, d'un commentaire et de l'idantifiant de l'article
-        * Si la condition est rempli alors on appel la methode de création d'un nouvelle article
-        * de l'objet $coms intancier par la class Commentaires.
-        */
-
-        /*$coms -> readAll($idArticle);*/
-         /*echo strval($commentaires);*/
-
+         include_once('__formCommentaire.php');
          foreach ($commentaires as $commentaire)
          {
         ?>
@@ -32,9 +20,9 @@
                 <p class="pseudo"> Posté par : <?php echo $commentaire['pseudo'];?></p>
                 <p class="commentaires"><?php echo $commentaire['commentaire'];?></p>
                 <p class="datetime">Le <?php  echo $commentaire['date_com'];?></p>
-                <a class="supr" href="deleteController.php?idCom=<?php echo $commentaire['id'];?>"><button>Supprimer</button></a>
+                <a class="supr" href="../supprimer/commmantaire/<?php echo $commentaire['id'];?>"><button>Supprimer</button></a>
                 <?php if($commentaire['signale'] != 1){ ?>
-                <a class="lienBtn" href="signaleCommentaireController.php?idComsign=<?php echo $commentaire['id'];?>"><button class="btn">Signaler</button></a>
+                <a class="lienBtn" href="../signaler/<?php echo $commentaire['id'];?>"><button class="btn">Signaler</button></a>
                 <?php
                    }
                    else {

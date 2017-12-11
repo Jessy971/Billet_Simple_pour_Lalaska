@@ -1,4 +1,7 @@
 <?php
+if(isset($url[1])){
+  $_SESSION['idArticle'] = $url[1];
+}
 $css= "";
 $titre = "Editeur";
 $idArticle = $url[1];
@@ -6,6 +9,7 @@ if(isset($_SESSION['password'], $_SESSION['login']))
 {
   if(isset($idArticle) && $idArticle != 0)
   {
+    /*setcookie('idArticle',$url[1],time()+60,null,null,false,true);*/
     require_once('modele/bddConnexionClass.php');
     require_once('modele/class/ManagerArticle.class.php');
 

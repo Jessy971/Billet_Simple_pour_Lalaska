@@ -8,7 +8,7 @@ include_once('_head.php');
           <?php
             if(isset($contenu)){
               foreach ( $contenu as $article) {
-              echo $article['contenu'];
+                echo $article['contenu'];
               }
             }
           ?>

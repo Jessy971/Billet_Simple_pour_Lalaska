@@ -8,13 +8,13 @@
     </li>
     <!--bouton lecture-->
     <li>
-      <a href="editer/<?php echo $donnees['id'];?>">
+      <a href="Editer/<?php echo $donnees['id'];?>">
         <button>Modifier</button>
       </a>
     </li>
     <!--bouton Modifier-->
     <li>
-      <a href="controller/deleteController.php?id=<?php echo $donnees['id'];?>">
+      <a href="supprimer/<?php echo $donnees['id'];?>">
         <button>Supprimer</button>
       </a>
     </li>
