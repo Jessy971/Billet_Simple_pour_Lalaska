@@ -1,11 +1,5 @@
 <?php
 session_start();
-/*setcookie('idArticle',$url[1],time()+60,null,null,false,true);*/
-/*
-echo '<pre>';
-echo $_SERVER['REQUEST_URI'];
-echo '<pre>';
-*/
 
 $url = '';
 if(isset($_GET['url']))
@@ -15,8 +9,9 @@ if(isset($_GET['url']))
 /*echo'<pre>';
 var_dump($url);
 echo'<pre>';*/
+
 //Redirige sur la page d'accueil visiteur.
-if(empty($url))
+if(empty($url) || $url[0] == 'accueil')
 {
   include_once('controller/listeArticlesController.php');
 }
@@ -34,24 +29,42 @@ elseif($url[0] =='accueilAdmin')
 }
 
 //Redirige sur la page de l'article choisi.
-elseif($url[0] == 'article' && !empty($url[1]))
+elseif($url[0] == 'article' && $url[1] > 0)
 {
   include_once('controller/getArticleController.php');
 }
 
-//Redirige sur la page d'accueil viiteur.
+//Redirige sur la page .
 elseif($url[0] == 'Editer' && $url[1] == 'new')
 {
   include_once('controller/EditerArticleController.php');
 }
 
-elseif ($url == 'logout')
+elseif($url[0] == 'Editer' && $url[1] > 0)
+{
+  include_once('controller/EditerArticleController.php');
+}
+
+//Redirige sur la page de déconnexion.
+elseif ($url[0] == 'logout')
 {
   include_once('controller/logoutController.php');
 }
 
+//Enregistre un nouvelle article ou un article modifier.
 elseif ($url[0] == 'article' && $url[1] == 'enregister')
 {
-  echo $_POST['newArticle'];
   include_once('controller/enregisterArticleController.php');
+}
+
+//Supprime un article.
+elseif($url[0] == 'supprimer')
+{
+  include_once('controller/deleteController.php');
+}
+elseif ($url[0] == 'commentaire') {
+  include_once('controller/newCommentaireController.php');
+}
+elseif ($url[0] == 'signaler') {
+  include_once('controller/signaleCommentaireController.php');
 }
