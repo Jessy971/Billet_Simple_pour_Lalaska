@@ -6,7 +6,5 @@
        <?php include('_contentAccueil.php'); ?>
        <a href="login"><button id="adminBtn" >Administrateur</button></a>
      </section>
-     <script type="text/javascript" src="../../lib/jquery-3.2.1.js"></script>
-     <script type="text/javascript" src="../../controller/js/set_id_h1.js"></script>
   </body>
 </html>
