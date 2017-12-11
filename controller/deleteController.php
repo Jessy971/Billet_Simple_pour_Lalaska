@@ -1,31 +1,27 @@
 <?php
-session_start();
 if(isset($_SESSION['password'], $_SESSION['login']))
 {
 
-  require_once('../modele/bddConnexionClass.php');
-  require_once('../modele/class/ManagerArticle.class.php');
-  require_once('../modele/class/ManagerCommentaires.class.php');
+  require_once('modele/bddConnexionClass.php');
+  require_once('modele/class/ManagerArticle.class.php');
+  require_once('modele/class/ManagerCommentaires.class.php');
 
   $bdd = new DataConnection();
-
-  if(isset($_GET['id']))
+  if(isset($url[1]) && $url[1] > 0)
   {
     $article = new ManagerArticle($bdd->bdd());
-    $idArticle = intVal($_GET['id']);
+    $idArticle = intVal($url[1]);
     $article->delete($idArticle);
-    header("Location: ../index.php");
+    header("Location: ../accueilAdmin");
   }
-  elseif(isset($_GET['idCom']))
+  elseif(isset($url[2]))
   {
-    $idCom = intVal($_GET['idCom']);
+    $idCom = intVal($url[2]);
     $commantaire = new ManagerCommentaires($bdd->bdd());
     $commantaire->delete($idCom);
-    /*header("Location: ../index.php");*///redirege sur l'article en cour de lecture.
-    echo $idCom;
-    echo '<br>commentaires supprimé.';
+    header("Location: ../../article/".$_SESSION['idArticle']);
   }
 }
 else {
-  header("Location: ../index.php");
+  /*header("Location: ../accueilAdmin");*/
 }
