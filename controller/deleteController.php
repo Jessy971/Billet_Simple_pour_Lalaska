@@ -23,5 +23,5 @@ if(isset($_SESSION['password'], $_SESSION['login']))
   }
 }
 else {
-  /*header("Location: ../accueilAdmin");*/
+  echo "erreur 404";
 }
