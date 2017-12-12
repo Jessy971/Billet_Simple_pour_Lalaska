@@ -17,8 +17,8 @@ if(isset($_POST['pseudo'],$_POST['password']) || isset($_SESSION['password'], $_
     $_SESSION['login']    = $_POST['pseudo'];
   }
 
-  $login                = htmlspecialchars($_SESSION['login']);
-  $password             = htmlspecialchars($_SESSION['password']);
+  $login    = htmlspecialchars($_SESSION['login']);
+  $password = htmlspecialchars($_SESSION['password']);
 
   // si la condition est rempli on se retrouve sur la page d'administration.
   if($login == 'admin' && $password == 'admin')

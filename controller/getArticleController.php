@@ -24,15 +24,12 @@ if(isset($url[1]))
   if(isset($_SESSION['password'], $_SESSION['login']))
   {
     $accueil      = '../accueilAdmin';
-    /*$posteCommentaire = "";*/
     $scriptJs     ='type="text/javascript" src="../controller/js/set_btn_hide_sign.js"';
   }
   else
   {
     $accueil      = '../accueil';
-    $posteCommentaire = 
     $scriptJs     ='type="text/javascript" src="../controller/js/set_btn.js"';
-
   }
   include_once('view/viewArticle.php');
 }
