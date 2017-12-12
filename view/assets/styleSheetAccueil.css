@@ -143,14 +143,16 @@ header p{
     border-radius: 2px;
 
 }
-#adminbtn{
-    display: inline-block;
-    font-size: 1.5em;
-    font-family: system-ui;
-    color: rgb(44, 62, 80);
-    margin-top: -16px;
-    background: rgba(236, 240, 241, 0.4);
-    margin-left: 47px;
-    border-radius: 3px;
-    border: 0;
+#adminBtn{
+  display: inline-block;
+  font-size: 1.5em;
+  font-family: system-ui;
+  color: rgb(44, 62, 80);
+  margin-bottom: 23px;
+  background: rgba(236, 240, 241, 0.4);
+  margin-left: 96px;
+  border-radius: 3px;
+  border: 0;
+
+}
 }

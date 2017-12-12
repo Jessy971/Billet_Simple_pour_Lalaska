@@ -28,9 +28,10 @@
                    else {
                 ?>
                 <p>Commentaire signalé ! <i class="fa fa-exclamation-triangle" aria-hidden="true"></i></p>
+                <?php }?>
              </div>
              <?php
-                }
+
               }
              ?>
       </aside>
